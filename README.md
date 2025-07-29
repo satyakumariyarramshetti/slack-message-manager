@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# 🚀 Slack API 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a full-stack web application built with the MERN stack (MongoDB not used here, but React + Node.js used) that integrates with the Slack API to **send**, **schedule**, **retrieve**, **edit**, and **delete** messages in a Slack channel.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📁 Project Structure
 
-### `npm start`
+slack-assignment/
+│
+├── backend/
+│ ├── .env # Slack credentials
+│ ├── index.js # Express server & Slack API handlers
+│ └── package.json # Backend dependencies
+│
+├── frontend/
+│ ├── public/
+│ │ └── index.html
+│ ├── src/
+│ │ ├── App.js
+│ │ ├── index.js
+│ │ ├── App.css # UI styling
+│ │ ├── slackService.js # Axios API calls to backend
+│ │ └── components/
+│ │ ├── SlackMessenger.js # Send message
+│ │ ├── ScheduleMessage.js # Schedule message
+│ │ └── Retrieve.js # Fetch/edit/delete messages
+│ └── package.json # Frontend dependencies
+│
+└── README.md
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ⚙️ Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 📤 Send instant messages to Slack
+- 🗓️ Schedule messages for later
+- 🔁 View recent Slack messages
+- ✏️ Edit previously sent messages
+- 🗑️ Delete messages from the channel
+- 🔄 Real-time UI updates after every action
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🔧 Setup Instructions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Clone the Repo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/satyakumariyarramshetti/slack-message-manager.git
+cd slack-message-manager
 
-### `npm run eject`
+2. Backend Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+cd backend
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Create .env file
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+SLACK_BOT_TOKEN=xoxb-your-bot-token
+SLACK_CHANNEL_ID=your-channel-id
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+node index.js
 
-## Learn More
+Server runs at: http://localhost:5000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Frontend Setup
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+cd ../frontend
+npm install
+npm start
+React App runs at: http://localhost:3000
 
-### Code Splitting
+🔗 API Routes (Backend)
+Route	Method	Description
+/send-message	POST	Sends a message to Slack
+/schedule-message	POST	Schedules a message
+/messages	GET	Retrieves recent messages
+/edit-message	POST	Edits a message by timestamp
+/delete-message	POST	Deletes a message by timestamp
+##✨ Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    Frontend: React.js, Axios
 
-### Analyzing the Bundle Size
+    Backend: Node.js, Express
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    API: Slack Web API (chat.postMessage, chat.scheduleMessage, etc.)
 
-### Making a Progressive Web App
+    Styling: CSS (App.css)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+📌 Notes
 
-### Advanced Configuration
+    All operations use Slack API with a bot token.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    Refresh of message list is automatic after any operation.
 
-### Deployment
+    No database is used; Slack is the single source of truth.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Created by 
+Satya Kumari

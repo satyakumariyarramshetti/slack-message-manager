@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import SlackMessagesRe from "./components/Retrieve";
+import ScheduleMessage from "./components/ScheduleMessage";
+import SlackMessenger from "./components/SlackMessenger";
+import './App.css'
+const App = () => {
+  const [refreshSignal, setRefreshSignal] = useState(0);
 
-function App() {
-  return (
+  const triggerRefresh = () => {
+    setRefreshSignal((prev) => prev + 1); // ✅ Changes whenever a message is sent/scheduled
+  };
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Slack API Assignment</h1>
+      <SlackMessenger onSent={triggerRefresh}/>
+      <ScheduleMessage onScheduled={triggerRefresh}/>
+      <SlackMessagesRe refreshSignal={refreshSignal}/>
     </div>
   );
 }
