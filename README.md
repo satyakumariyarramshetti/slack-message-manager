@@ -48,11 +48,10 @@ slack/
 
 ### 1. Clone the Repo
 
-```bash
 git clone https://github.com/satyakumariyarramshetti/slack-message-manager.git
 cd slack-message-manager
 
-2. Backend Setup
+## 2. Backend Setup
 
 cd backend
 npm install
@@ -66,7 +65,7 @@ node index.js
 
 Server runs at: http://localhost:5000
 
-3. Frontend Setup
+## 3. Frontend Setup
 
 cd ../frontend
 npm install
@@ -80,7 +79,7 @@ Route	Method	Description
 /messages	GET	Retrieves recent messages
 /edit-message	POST	Edits a message by timestamp
 /delete-message	POST	Deletes a message by timestamp
-##✨ Technologies Used
+## ✨ Technologies Used
 
     Frontend: React.js, Axios
 
@@ -90,7 +89,7 @@ Route	Method	Description
 
     Styling: CSS (App.css)
 
-📌 Notes
+## 📌 Notes
 
     All operations use Slack API with a bot token.
 
