@@ -9,26 +9,26 @@ This project is a full-stack web application built with the MERN stack (MongoDB 
 slack/
 │
 ├── backend/
-│ ├── .env # Slack credentials
-│ ├── index.js # Express server & Slack API handlers
-│ └── package.json # Backend dependencies
+│   ├── .env                 # Slack credentials
+│   ├── index.js             # Express server & Slack API handlers
+│   └── package.json         # Backend dependencies
 │
 ├── frontend/
-│ ├── public/
-│ │ └── index.html
-│ ├── src/
-│ │ ├── App.js
-│ │ ├── index.js
-│ │ ├── App.css # UI styling
-│ │ ├── slackService.js # Axios API calls to backend
-│ │ └── components/
-│ │ ├── SlackMessenger.js # Send message
-│ │ ├── ScheduleMessage.js # Schedule message
-│ │ └── Retrieve.js # Fetch/edit/delete messages
-│ └── package.json # Frontend dependencies
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   ├── App.css          # UI styling
+│   │   ├── slackService.js  # Axios API calls to backend
+│   │   └── components/
+│   │       ├── SlackMessenger.js  # Send message
+│   │       ├── ScheduleMessage.js # Schedule message
+│   │       └── Retrieve.js        # Fetch/edit/delete messages
+│   └── package.json         # Frontend dependencies
 │
 └── README.md
-
+```
 
 ---
 
