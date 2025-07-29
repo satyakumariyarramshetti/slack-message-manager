@@ -6,7 +6,7 @@ This project is a full-stack web application built with the MERN stack (MongoDB 
 
 ## 📁 Project Structure
 
-slack-assignment/
+slack/
 │
 ├── backend/
 │ ├── .env # Slack credentials
