@@ -1,11 +1,12 @@
 # 🚀 Slack API 
 
-This project is a full-stack web application built with the MERN stack (MongoDB not used here, but React + Node.js used) that integrates with the Slack API to **send**, **schedule**, **retrieve**, **edit**, and **delete** messages in a Slack channel.
+This project is a full-stack Web application built with the MERN stack (MongoDB not used here, but React + Node.js used) that integrates with the Slack API to **send**, **schedule**, **retrieve**, **edit**, and **delete** messages in a Slack channel.
 
 ---
 
 ## 📁 Project Structure
 
+```
 slack/
 │
 ├── backend/
